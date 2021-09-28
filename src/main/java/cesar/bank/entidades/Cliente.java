@@ -5,28 +5,33 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
+
 
 public class Cliente {
     private String nome;
     private String cpf;
-    private  String senha;
+    private  Conta conta;
 
-    public Cliente(String nome, String cpf) {
+    public Cliente(String nome, String cpf, Conta conta) {
         this.nome = nome;
         this.cpf = cpf;
+        this.conta = conta;
     }
 
+    public String getNome() {
+        return nome;
+    }
 
-    public void verificaSenha(String senha) {
-        if (senha.length() > 6) {
-            System.out.println("A senha tem mais de seis digitos");
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-        } else if (senha.length() < 6) {
-            System.out.println("A senha tem menos de seis digitos");
-        } else {
-            System.out.println("A senha tem seis digitos");
-        }
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
 
